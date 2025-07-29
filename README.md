@@ -99,9 +99,3 @@ task-list-app/
 │   └── dark_theme.png
 └── requirements.txt  # (Opcional) Dependencias
 ```  
-
-*(Añade un `requirements.txt` si usas librerías externas).*  
-
---- 
-
-¡Listo para usar! 🌟
