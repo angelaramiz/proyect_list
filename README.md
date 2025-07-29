@@ -91,11 +91,8 @@ THEMES = {
 
 ### 📂 **Estructura del Proyecto**  
 ```
-task-list-app/
-├── task_app.py       # Código principal
+proyect_list/
+├── run.py       # Código principal
 ├── README.md         # Este archivo
-├── screenshots/      # Capturas de pantalla
-│   ├── light_theme.png
-│   └── dark_theme.png
 └── requirements.txt  # (Opcional) Dependencias
 ```  
