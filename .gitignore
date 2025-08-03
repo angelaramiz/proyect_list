@@ -1,2 +1,5 @@
 env/
 env
+assets/**/*.svg
+assets/*.py
+assets/scripts/

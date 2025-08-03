@@ -1,98 +1,73 @@
-# 📝 **Task List App - Ubuntu**  
+# 📁 Assets Directory Structure
 
-Aplicación de lista de tareas con **interfaz gráfica (Tkinter)**, cambio de temas (claro/oscuro) y diseño responsive.  
-Desarrollada en Python para **Ubuntu** (compatible con otras distribuciones Linux).  
+Este directorio contiene todos los recursos visuales organizados por tema.
 
----
+## 📂 Estructura de Carpetas
 
-## 🚀 **Características**  
-✔️ **Añadir, eliminar y marcar tareas** como completadas.  
-✔️ **Temas personalizables**: Claro y oscuro (con botón de alternancia).  
-✔️ **Interfaz adaptable**: Redimensionable y bien organizada.  
-✔️ **Compatibilidad**: Funciona en **Ubuntu** (y otros sistemas con Python + Tkinter).  
-✔️ **Emojis y símbolos**: Mejora la experiencia de usuario (opcional).  
+```
+assets/
+├── light/          # Assets para tema claro
+│   ├── add.png
+│   ├── add.svg
+│   ├── complete.png
+│   ├── complete.svg
+│   ├── delete.png
+│   ├── delete.svg
+│   ├── logo.png
+│   ├── logo.svg
+│   ├── paper_bg.png
+│   ├── paper_bg.svg
+│   ├── theme.png
+│   └── theme.svg
+├── dark/           # Assets para tema oscuro
+│   ├── add.png
+│   ├── add.svg
+│   ├── complete.png
+│   ├── complete.svg
+│   ├── delete.png
+│   ├── delete.svg
+│   ├── logo.png
+│   ├── logo.svg
+│   ├── paper_bg.png
+│   ├── paper_bg.svg
+│   ├── theme.png
+│   └── theme.svg
+└── scripts/        # Scripts de generación
+    ├── create_themed_assets.py
+    └── svg_to_png.py
+```
 
----
+## 🎨 Descripción de Assets
 
-## 📦 **Requisitos**  
-- **Python 3.8+** (incluido en Ubuntu por defecto).  
-- **Tkinter**: Biblioteca estándar (verifica si está instalada).  
+### Iconos (24x24px)
+- **add.png/svg**: Botón para agregar nuevas tareas
+- **delete.png/svg**: Botón para eliminar tareas
+- **complete.png/svg**: Botón para marcar tareas como completadas
+- **theme.png/svg**: Botón para cambiar entre temas
 
-### 🔍 **Verificar Tkinter en Ubuntu**  
-Ejecuta en la terminal:  
+### Logo (40x40px)
+- **logo.png/svg**: Logo de la aplicación con estilo cuaderno
+
+### Fondos
+- **paper_bg.png/svg**: Fondo tipo papel con líneas de cuaderno
+
+## 🔧 Cómo Funciona
+
+La aplicación automáticamente carga los assets correctos según el tema:
+- **Tema Claro**: Carga desde `assets/light/`
+- **Tema Oscuro**: Carga desde `assets/dark/`
+
+## 🛠️ Regenerar Assets
+
+Para regenerar todos los assets PNG desde cero:
+
 ```bash
-python3 -m tkinter
-```
-Si no aparece una ventana de prueba, instala Tkinter:  
-```bash
-sudo apt-get install python3-tk
+cd assets
+python create_themed_assets.py
 ```
 
----
+## 📝 Notas
 
-## 🛠️ **Instalación y Ejecución**  
-1. **Clona o descarga** el repositorio:  
-   ```bash
-   git clone https://github.com/tu-usuario/task-list-app.git
-   cd task-list-app
-   ```
-
-2. **Ejecuta la aplicación**:  
-   ```bash
-   python3 task_app.py
-   ```
-
-   *(O usa `python` si tu sistema lo requiere).*  
-
----
-
-## 🎨 **Personalización**  
-### **Cambiar temas**  
-- Haz clic en el botón **🌓 Tema Oscuro/Claro** para alternar entre modos.  
-
-### **Modificar colores**  
-Edita el diccionario `THEMES` en el código para ajustar los colores:  
-```python
-THEMES = {
-    "light": {
-        "bg": "#f0f0f0",  # Fondo de la ventana
-        "fg": "#000000",   # Color del texto
-        # ... más colores
-    },
-    "dark": {
-        "bg": "#2d2d2d",
-        "fg": "#ffffff",
-        # ... más colores
-    }
-}
-```
----
-
-## ❓ **Solución de Problemas**  
-### **1. Emojis no se muestran (□)**  
-- **Causa**: Fuentes incompatibles en Ubuntu.  
-- **Solución**:  
-  ```bash
-  sudo apt-get install fonts-noto-color-emoji
-  ```
-  Luego, reinicia la aplicación.  
-
-### **2. Error `ModuleNotFoundError: No module named 'tkinter'`**  
-- **Solución**: Instala Tkinter:  
-  ```bash
-  sudo apt-get install python3-tk
-  ```
-
----
-
-**🎉 ¡Organiza tus tareas con estilo en Ubuntu!** 🎉  
-
---- 
-
-### 📂 **Estructura del Proyecto**  
-```
-proyect_list/
-├── run.py       # Código principal
-├── README.md         # Este archivo
-└── requirements.txt  # (Opcional) Dependencias
-```  
+- Los archivos SVG son las fuentes originales
+- Los archivos PNG son generados automáticamente
+- Los assets en la raíz (`assets/`) son copias del tema claro para compatibilidad
