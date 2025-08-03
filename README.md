@@ -1,73 +1,96 @@
-# 📁 Assets Directory Structure
+# � Project List - Aplicación de Lista de Tareas
 
-Este directorio contiene todos los recursos visuales organizados por tema.
+Una aplicación Python de lista de tareas con soporte para temas claro y oscuro.
 
-## 📂 Estructura de Carpetas
+## 📂 Estructura del Proyecto
 
 ```
-assets/
-├── light/          # Assets para tema claro
-│   ├── add.png
-│   ├── add.svg
-│   ├── complete.png
-│   ├── complete.svg
-│   ├── delete.png
-│   ├── delete.svg
-│   ├── logo.png
-│   ├── logo.svg
-│   ├── paper_bg.png
-│   ├── paper_bg.svg
-│   ├── theme.png
-│   └── theme.svg
-├── dark/           # Assets para tema oscuro
-│   ├── add.png
-│   ├── add.svg
-│   ├── complete.png
-│   ├── complete.svg
-│   ├── delete.png
-│   ├── delete.svg
-│   ├── logo.png
-│   ├── logo.svg
-│   ├── paper_bg.png
-│   ├── paper_bg.svg
-│   ├── theme.png
-│   └── theme.svg
-└── scripts/        # Scripts de generación
-    ├── create_themed_assets.py
-    └── svg_to_png.py
+proyect_list/
+├── README.md           # Este archivo
+├── requirements.txt    # Dependencias del proyecto
+├── run.py             # Archivo principal de la aplicación
+└── assets/            # Recursos visuales
+    ├── light/         # Assets para tema claro (solo PNG)
+    │   ├── add.png
+    │   ├── complete.png
+    │   ├── delete.png
+    │   ├── logo.png
+    │   ├── paper_bg.png
+    │   └── theme.png
+    └── dark/          # Assets para tema oscuro (solo PNG)
+        ├── add.png
+        ├── complete.png
+        ├── delete.png
+        ├── logo.png
+        ├── paper_bg.png
+        └── theme.png
 ```
 
-## 🎨 Descripción de Assets
+## 🚀 Instalación y Configuración
+
+### Requisitos Previos
+- Python 3.8 o superior
+- pip (gestor de paquetes de Python)
+
+### Instalación
+
+1. **Clona el repositorio:**
+   ```bash
+   git clone https://github.com/angelaramiz/proyect_list.git
+   cd proyect_list
+   ```
+
+2. **Crea un entorno virtual:**
+   ```bash
+   python -m venv env
+   ```
+
+3. **Activa el entorno virtual:**
+   - En Windows:
+     ```bash
+     env\Scripts\activate
+     ```
+   - En macOS/Linux:
+     ```bash
+     source env/bin/activate
+     ```
+
+4. **Instala las dependencias:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. **Ejecuta la aplicación:**
+   ```bash
+   python run.py
+   ```
+
+## 🎨 Recursos Visuales
+
+La aplicación incluye assets optimizados para ambos temas:
 
 ### Iconos (24x24px)
-- **add.png/svg**: Botón para agregar nuevas tareas
-- **delete.png/svg**: Botón para eliminar tareas
-- **complete.png/svg**: Botón para marcar tareas como completadas
-- **theme.png/svg**: Botón para cambiar entre temas
+- **add.png**: Botón para agregar nuevas tareas
+- **delete.png**: Botón para eliminar tareas
+- **complete.png**: Botón para marcar tareas como completadas
+- **theme.png**: Botón para cambiar entre temas
 
 ### Logo (40x40px)
-- **logo.png/svg**: Logo de la aplicación con estilo cuaderno
+- **logo.png**: Logo de la aplicación con estilo cuaderno
 
 ### Fondos
-- **paper_bg.png/svg**: Fondo tipo papel con líneas de cuaderno
+- **paper_bg.png**: Fondo tipo papel con líneas de cuaderno
 
-## 🔧 Cómo Funciona
+## ⚡ Características
 
-La aplicación automáticamente carga los assets correctos según el tema:
+- ✅ Gestión completa de tareas (crear, eliminar, completar)
+- 🎨 Soporte para temas claro y oscuro
+- 📱 Interfaz intuitiva y fácil de usar
+- 🖼️ Assets optimizados para cada tema
+- 💾 Persistencia de datos local
+
+## � Cómo Funciona
+
+La aplicación automáticamente carga los assets correctos según el tema seleccionado:
 - **Tema Claro**: Carga desde `assets/light/`
 - **Tema Oscuro**: Carga desde `assets/dark/`
-
-## 🛠️ Regenerar Assets
-
-Para regenerar todos los assets PNG desde cero:
-
-```bash
-cd assets
-python create_themed_assets.py
-```
-
-## 📝 Notas
-
-- Los archivos SVG son las fuentes originales
-- Los archivos PNG son generados automáticamente
-- Los assets en la raíz (`assets/`) son copias del tema claro para compatibilidad
